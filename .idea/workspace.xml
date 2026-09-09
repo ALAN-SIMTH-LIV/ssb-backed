@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="29003bd6-8cf9-44fa-af00-dc91dc9bcf2c" name="更改" comment="">
+    <list default="true" id="29003bd6-8cf9-44fa-af00-dc91dc9bcf2c" name="更改" comment="啥也没干">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/ssb/admin/controller/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/ssb/admin/controller/TestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/ssb/web/controller/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/ssb/web/controller/TestController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,11 +160,25 @@
       <workItem from="1788875828171" duration="2068000" />
       <workItem from="1788943096353" duration="25000" />
       <workItem from="1788963419060" duration="112000" />
-      <workItem from="1788966920220" duration="429000" />
+      <workItem from="1788966920220" duration="481000" />
+      <workItem from="1788968755431" duration="299000" />
     </task>
+    <task id="LOCAL-00001" summary="啥也没干">
+      <option name="closed" value="true" />
+      <created>1788967391100</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1788967391101</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="啥也没干" />
+    <option name="LAST_COMMIT_MESSAGE" value="啥也没干" />
   </component>
 </project>
