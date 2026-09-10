@@ -11,7 +11,7 @@
 
 	<groupId>com.tl</groupId>
 	<artifactId>ssb</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0</version>
 	<packaging>pom</packaging>
 
 	<!--聚合子模块-->
@@ -25,6 +25,9 @@
 	<properties>
 		<java.version>17</java.version>
 		<spring-boot.version>3.5.11</spring-boot.version>
+		<mysql.version>8.0.30</mysql.version>
+		<mybatis.version>3.0.5</mybatis.version>
+		<lombok.version>1.18.38</lombok.version>
 	</properties>
 
 	<!--依赖管理-->
@@ -45,7 +48,26 @@
 				<version>${spring-boot.version}</version>
 			</dependency>
 
+			<!--mysql 驱动-->
+			<dependency>
+				<groupId>mysql</groupId>
+				<artifactId>mysql-connector-java</artifactId>
+				<version>${mysql.version}</version>
+			</dependency>
 
+			<!--mybatis 驱动-->
+			<dependency>
+				<groupId>org.mybatis.spring.boot</groupId>
+				<artifactId>mybatis-spring-boot-starter</artifactId>
+				<version>${mybatis.version}</version>
+			</dependency>
+
+			<!--lombok-->
+			<dependency>
+				<groupId>org.projectlombok</groupId>
+				<artifactId>lombok</artifactId>
+				<version>${lombok.version}</version>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
 

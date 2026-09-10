@@ -4,10 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="29003bd6-8cf9-44fa-af00-dc91dc9bcf2c" name="更改" comment="啥也没干">
+    <list default="true" id="29003bd6-8cf9-44fa-af00-dc91dc9bcf2c" name="更改" comment="配置MySQL数据库以及Mybatis信息">
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/ssb/common/entity/po/user.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/ssb/admin/controller/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/ssb/admin/controller/TestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/ssb/web/controller/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/ssb/web/controller/TestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/admin/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,7 +165,8 @@
       <workItem from="1788943096353" duration="25000" />
       <workItem from="1788963419060" duration="112000" />
       <workItem from="1788966920220" duration="481000" />
-      <workItem from="1788968755431" duration="299000" />
+      <workItem from="1788968755431" duration="419000" />
+      <workItem from="1789033202912" duration="8195000" />
     </task>
     <task id="LOCAL-00001" summary="啥也没干">
       <option name="closed" value="true" />
@@ -171,14 +176,35 @@
       <option name="project" value="LOCAL" />
       <updated>1788967391101</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="修改了点错误代码，实现前端测试跨域访问">
+      <option name="closed" value="true" />
+      <created>1788969156553</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1788969156554</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="啥也没干" />
-    <option name="LAST_COMMIT_MESSAGE" value="啥也没干" />
+    <MESSAGE value="修改了点错误代码，实现前端测试跨域访问" />
+    <MESSAGE value="配置MySQL数据库以及Mybatis信息" />
+    <option name="LAST_COMMIT_MESSAGE" value="配置MySQL数据库以及Mybatis信息" />
   </component>
 </project>
