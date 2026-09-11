@@ -16,7 +16,7 @@ import java.util.Map;
 public class UserServiceImpl implements UserService {
 
     @Autowired
-    private UserMapper userMapper;
+    private UserMapper<User,UserQuery> userMapper;
 
     @Override
     public Boolean register(User user) {
@@ -43,7 +43,7 @@ public class UserServiceImpl implements UserService {
         }
         Integer pageNum = query.getPageNum() == null ? 1 : query.getPageNum();
         Integer pageSize = query.getPageSize() == null ? 20 : query.getPageSize();
-        Integer total = userMapper.count(query);
+        Integer total = userMapper.selectCount(query);
         SimplePage simplePage = new SimplePage(pageNum,total,pageSize);
         query.setSimplePage(simplePage);
         List<User> users = userMapper.selectList(query);

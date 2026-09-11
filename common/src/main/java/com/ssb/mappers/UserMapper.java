@@ -6,12 +6,8 @@ import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
-public interface UserMapper {
+public interface UserMapper<T,P> extends BaseMapper<T,P>{
     Integer insert(User user);
 
     User select(User user);
-
-    Integer count(@Param("query") UserQuery query);
-
-    List<User> selectList(@Param("query") UserQuery query);
 }

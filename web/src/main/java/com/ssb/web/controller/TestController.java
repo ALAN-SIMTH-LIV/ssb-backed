@@ -2,6 +2,7 @@ package com.ssb.web.controller;
 
 import com.ssb.entity.dto.UserQuery;
 import com.ssb.entity.po.User;
+import com.ssb.entity.vo.ResponseVO;
 import com.ssb.entity.vo.UserVO;
 import com.ssb.service.UserService;
 import org.apache.ibatis.annotations.Param;
@@ -13,40 +14,37 @@ import java.util.Map;
 
 @RestController
 @RequestMapping(value = "/api/users")
-public class TestController {
+public class TestController extends ABaseController{
 
     @Autowired
     private UserService userService;
 
-    @GetMapping(value = "/test")
-    private String test(){
-        return "这里是WEB端";
-    }
-
     @PostMapping
-    public String addUser(
+    public ResponseVO<Void> addUser(
             @RequestBody User user
             ){
         if (!userService.register(user)){
-            return "账号: "+ user.getUserName()+" 已存在！";
+            // TODO 这里应该抛出异常
+            return ResponseSuccess();
         }
         userService.register(user);
-        return "注册成功！";
+        return ResponseSuccess();
     }
 
     @GetMapping("/{id}")
-    public UserVO getUser(@PathVariable Integer id){
+    public ResponseVO<UserVO> getUser(@PathVariable Integer id){
         User user = userService.findById(User.builder().id(id).build());
-        return UserVO.builder()
+        return ResponseSuccess(UserVO.builder()
                 .id(user.getId())
                 .userName(user.getUserName())
-                .build();
+                .build());
     }
 
     @GetMapping
-    public Map<String, Object> getUsers(
+    // TODO 这里少个分页类
+    public ResponseVO<Map<String, Object>> getUsers(
            UserQuery userQuery
     ){
-        return userService.pageUser(userQuery);
+        return ResponseSuccess(userService.pageUser(userQuery));
     }
 }

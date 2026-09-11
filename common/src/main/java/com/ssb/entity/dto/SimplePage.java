@@ -31,23 +31,33 @@ public class SimplePage {
     }
 
     public void action(){
+        // 防止页码小于0
         if (this.pageSize <= 0) {
             this.pageSize = 20;
         }
+
+        // 计算总页数
         if (this.total > 0) {
             this.pageTotal = this.total % this.pageSize == 0 ? this.total / this.pageSize
                     : this.total / this.pageSize + 1;
         } else {
+            // 防止总页数为0
             pageTotal = 1;
         }
 
+        // 页码
         if (pageNum <= 1) {
             pageNum = 1;
         }
+
+        // 防止出现2页/1页的情况
         if (pageNum > pageTotal) {
             pageNum = pageTotal;
         }
+
+        // 计算偏移值
         this.start = (pageNum - 1) * pageSize;
+        // 终止条件 其实就是每页大小
         this.end = this.pageSize;
     }
 

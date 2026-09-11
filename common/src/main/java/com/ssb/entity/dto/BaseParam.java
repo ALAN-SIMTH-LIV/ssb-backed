@@ -6,7 +6,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class BaseParam {
-    private SimplePage simplePage; // 分页对象
+    private SimplePage simplePage; // 分页对象处理类
     private Integer pageNum; // 页码
     private Integer pageSize; // 每页大小
     private String orderBy;  // 排序方式
