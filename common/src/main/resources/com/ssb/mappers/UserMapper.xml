@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssb.mappers.UserMapper">
+    <!--实体映射-->
+    <resultMap id="base_map" type="com.ssb.entity.po.User">
+        <id column="id" property="id"/>
+        <result column="username" property="userName"/>
+        <result column="password" property="password"/>
+    </resultMap>
+
+    <!--查询用的结果列-->
+    <sql id="base_column_list">
+        u.id,u.username,u.password
+    </sql>
+
+    <!--基础条件字段-->
+    <sql id="base_condition_filed">
+        <if test="query.id != null">
+            and u.id = #{query.id}
+        </if>
+        <if test="query.userName != null and query.userName !=''">
+            and u.username = #{query.userName}
+        </if>
+    </sql>
+
+    <!--通用条件列-->
+    <sql id="base_condition">
+        <where>
+            <include refid="base_condition_filed"/>
+        </where>
+    </sql>
+
+    <!-- 通用查询条件列-->
+    <sql id="query_condition">
+        <where>
+            <include refid="base_condition_filed"/>
+            <if test="query.userNameFuzzy != null and query.userNameFuzzy !=''">
+                AND u.username LIKE concat('%', #{query.userNameFuzzy}, '%')
+            </if>
+        </where>
+    </sql>
+
+    <!--新增-->
+    <insert id="insert" parameterType="com.ssb.entity.po.User" >
+        INSERT INTO user(username,password) VALUES (#{userName},#{password})
+    </insert>
+
+    <!--查询-->
+    <select id="select" resultMap="base_map">
+        SELECT
+        <include refid="base_column_list"/>
+        FROM user u WHERE id=#{id}
+    </select>
+
+    <!--统计数量-->
+    <select id="count" resultType="integer">
+        SELECT COUNT(1) FROM user u
+        <include refid="query_condition"/>
+    </select>
+
+    <!--查询所有-->
+    <select id="selectList" resultMap="base_map">
+        SELECT
+        <include refid="base_column_list"/>
+        FROM user u
+        <include refid="query_condition"/>
+        <if test="query.orderBy!=null">
+            ORDER BY #{query.orderBy}
+        </if>
+        <if test="query.simplePage!=null">
+            LIMIT #{query.simplePage.start},#{query.simplePage.end}
+        </if>
+    </select>
+</mapper>

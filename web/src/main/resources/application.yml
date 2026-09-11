@@ -5,13 +5,14 @@ server:
 spring:
   datasource:
     # 数据库基础配置
-    url: jdbc:mysql://127.0.0.1:3306/tlive?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8&autoReconnect=true&allowMultiQueries=true&useSSL=false
+    url: jdbc:mysql://127.0.0.1:3306/ssb?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8&autoReconnect=true&allowMultiQueries=true&useSSL=false
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
     password: 123456
     # 数据库连接池
     hikari:
       pool-name: HikariCPDatasource # 连接池名字
+      minimum-idle: 5 # 最小空闲数
       idle-timeout: 180000 # 空闲连接超时时间
       maximum-pool-size: 10 # 最大连接数上限
       auto-commit: true # 自动提交
