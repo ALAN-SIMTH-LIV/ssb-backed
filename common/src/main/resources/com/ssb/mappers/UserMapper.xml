@@ -47,11 +47,18 @@
         INSERT INTO user(username,password) VALUES (#{userName},#{password})
     </insert>
 
-    <!--查询-->
-    <select id="select" resultMap="base_map">
+    <!--根据UserName查询-->
+    <select id="selectByUserName" resultMap="base_map">
         SELECT
         <include refid="base_column_list"/>
-        FROM user u WHERE id=#{id}
+        FROM user u WHERE u.username=#{userName}
+    </select>
+
+    <!--根据ID查询-->
+    <select id="selectById" resultMap="base_map">
+        SELECT
+        <include refid="base_column_list"/>
+        FROM user u WHERE u.id=#{id}
     </select>
 
     <!--统计数量-->

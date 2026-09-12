@@ -5,6 +5,7 @@ import com.ssb.entity.po.User;
 import com.ssb.entity.vo.PaginationVO;
 import com.ssb.entity.vo.ResponseVO;
 import com.ssb.entity.vo.UserVO;
+import com.ssb.exception.BusinessException;
 import com.ssb.service.UserService;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,16 +26,14 @@ public class TestController extends ABaseController{
             @RequestBody User user
             ){
         if (!userService.register(user)){
-            // TODO 这里应该抛出异常
-            return ResponseSuccess();
+            throw new BusinessException("账号已存在");
         }
-        userService.register(user);
         return ResponseSuccess();
     }
 
     @GetMapping("/{id}")
     public ResponseVO<UserVO> getUser(@PathVariable Integer id){
-        User user = userService.findById(User.builder().id(id).build());
+        User user = userService.findById(id);
         return ResponseSuccess(UserVO.builder()
                 .id(user.getId())
                 .userName(user.getUserName())

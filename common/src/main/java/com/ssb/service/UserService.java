@@ -10,7 +10,7 @@ import java.util.Map;
 public interface UserService {
     Boolean register(User user);
 
-    User findById(User user);
+    User findById(Integer id);
 
     PaginationVO<UserVO> pageUser(UserQuery userQuery);
 }

@@ -21,20 +21,17 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public Boolean register(User user) {
-        User user1 = userMapper.select(user);
+        User user1 = userMapper.selectByUserName(user);
         if (null == user1){
             userMapper.insert(user);
             return true;
         }
-        if (user1.getUserName().equals(user.getUserName())){
-            return false;
-        }
-        return true;
+        return false;
     }
 
     @Override
-    public User findById(User user) {
-        return userMapper.select(user);
+    public User findById(Integer id) {
+        return userMapper.selectById(id);
     }
 
     @Override

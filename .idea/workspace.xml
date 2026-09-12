@@ -4,11 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="29003bd6-8cf9-44fa-af00-dc91dc9bcf2c" name="更改" comment="测试滑块验证码，解决下编译时会出现的警告问题">
+    <list default="true" id="29003bd6-8cf9-44fa-af00-dc91dc9bcf2c" name="更改" comment="配置了分页类">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/ssb/exception/BusinessException.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/ssb/exception/BusinessException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/ssb/mappers/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/ssb/mappers/UserMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/src/main/java/com/ssb/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/ssb/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/src/main/java/com/ssb/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/ssb/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/ssb/web/controller/CaptchaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/ssb/web/controller/CaptchaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/resources/com/ssb/mappers/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/resources/com/ssb/mappers/UserMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/main/java/com/ssb/web/controller/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/ssb/web/controller/TestController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -112,13 +114,6 @@
     </option>
     <option name="configurationStatuses">
       <map>
-        <entry key="HttpClient.HttpRequestRunConfigurationType">
-          <value>
-            <map>
-              <entry key="generated-requests | #3" value="STOPPED" />
-            </map>
-          </value>
-        </entry>
         <entry key="SpringBootApplicationConfigurationType">
           <value>
             <map>
@@ -214,7 +209,7 @@
       <workItem from="1789141801484" duration="8000" />
       <workItem from="1789141817950" duration="143000" />
       <workItem from="1789204403596" duration="598000" />
-      <workItem from="1789212318769" duration="17662000" />
+      <workItem from="1789212318769" duration="19587000" />
     </task>
     <task id="LOCAL-00001" summary="啥也没干">
       <option name="closed" value="true" />
@@ -272,7 +267,15 @@
       <option name="project" value="LOCAL" />
       <updated>1789230186535</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="配置了分页类">
+      <option name="closed" value="true" />
+      <created>1789233680414</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1789233680414</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -297,6 +300,7 @@
     <MESSAGE value="配置了响应类、响应枚举，优化Mapper代码重复结构。" />
     <MESSAGE value="配置了JWT令牌需要的常量，以及JWT令牌需要的一些方法(不够后面再补)" />
     <MESSAGE value="测试滑块验证码，解决下编译时会出现的警告问题" />
-    <option name="LAST_COMMIT_MESSAGE" value="测试滑块验证码，解决下编译时会出现的警告问题" />
+    <MESSAGE value="配置了分页类" />
+    <option name="LAST_COMMIT_MESSAGE" value="配置了分页类" />
   </component>
 </project>
