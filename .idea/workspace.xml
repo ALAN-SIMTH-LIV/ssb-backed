@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="29003bd6-8cf9-44fa-af00-dc91dc9bcf2c" name="更改" comment="配置了响应类、响应枚举，优化Mapper代码重复结构。">
+    <list default="true" id="29003bd6-8cf9-44fa-af00-dc91dc9bcf2c" name="更改" comment="配置了JWT令牌需要的常量，以及JWT令牌需要的一些方法(不够后面再补)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/ssb/web/WebApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/ssb/web/WebApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +76,7 @@
     "Spring Boot.WebApplication.executor": "Run",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "G:/java_learn_resource/ssb/ssb-back/pom.xml",
+    "last_opened_file_path": "G:/java_learn_resource/ssb/ssb-back/common/src/main/resources/fonts",
     "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "模块",
     "project.structure.proportion": "0.15",
@@ -87,6 +89,10 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="G:\java_learn_resource\ssb\ssb-back\common\src\main\resources\fonts" />
+      <recent name="G:\java_learn_resource\ssb\ssb-back\common\src\main\resources" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.ssb.admin.controller" />
     </key>
@@ -113,7 +119,7 @@
       </map>
     </option>
   </component>
-  <component name="RunManager" selected="应用程序.JwtUtil">
+  <component name="RunManager" selected="Spring Boot.WebApplication">
     <configuration name="JwtUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.ssb.utils.JwtUtil" />
       <module name="common" />
@@ -193,7 +199,7 @@
       <workItem from="1789141801484" duration="8000" />
       <workItem from="1789141817950" duration="143000" />
       <workItem from="1789204403596" duration="598000" />
-      <workItem from="1789212318769" duration="8091000" />
+      <workItem from="1789212318769" duration="14707000" />
     </task>
     <task id="LOCAL-00001" summary="啥也没干">
       <option name="closed" value="true" />
@@ -235,7 +241,15 @@
       <option name="project" value="LOCAL" />
       <updated>1789141091572</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="配置了JWT令牌需要的常量，以及JWT令牌需要的一些方法(不够后面再补)">
+      <option name="closed" value="true" />
+      <created>1789223110508</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1789223110508</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -258,6 +272,7 @@
     <MESSAGE value="配置MySQL数据库以及Mybatis信息" />
     <MESSAGE value="配置基本MyBatis代码" />
     <MESSAGE value="配置了响应类、响应枚举，优化Mapper代码重复结构。" />
-    <option name="LAST_COMMIT_MESSAGE" value="配置了响应类、响应枚举，优化Mapper代码重复结构。" />
+    <MESSAGE value="配置了JWT令牌需要的常量，以及JWT令牌需要的一些方法(不够后面再补)" />
+    <option name="LAST_COMMIT_MESSAGE" value="配置了JWT令牌需要的常量，以及JWT令牌需要的一些方法(不够后面再补)" />
   </component>
 </project>

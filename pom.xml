@@ -29,6 +29,7 @@
 		<mybatis.version>3.0.5</mybatis.version>
 		<lombok.version>1.18.38</lombok.version>
 		<jjwt.version>0.12.7</jjwt.version>
+		<anji.plus.version>1.4.0</anji.plus.version>
 	</properties>
 
 	<!--依赖管理-->
@@ -87,6 +88,13 @@
 				<artifactId>jjwt-jackson</artifactId>
 				<version>${jjwt.version}</version>
 				<scope>runtime</scope>
+			</dependency>
+
+			<!--滑块验证码 anji-plus-->
+			<dependency>
+				<groupId>com.anji-plus</groupId>
+				<artifactId>captcha-spring-boot-starter</artifactId>
+				<version>${anji.plus.version}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
