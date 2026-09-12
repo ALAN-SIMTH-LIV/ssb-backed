@@ -1,0 +1,10 @@
+package com.ssb.constants;
+
+public class Constants {
+    //JWT密钥
+    public static final String BASE64_STRING_KEY_JWT = "6s+e9Z0XoVK/kPCGQKEn/3M1IrhlZfNS5BBxWdNQVcc=";
+    //JWT过期时间
+    public static final long JWT_EXPIRATION_TIME = 3600000; // 1小时
+    //JWT颁发者
+    public static final String JWT_ISSUER = "ssb";
+}

@@ -28,6 +28,7 @@
 		<mysql.version>8.0.30</mysql.version>
 		<mybatis.version>3.0.5</mybatis.version>
 		<lombok.version>1.18.38</lombok.version>
+		<jjwt.version>0.12.7</jjwt.version>
 	</properties>
 
 	<!--依赖管理-->
@@ -67,6 +68,25 @@
 				<groupId>org.projectlombok</groupId>
 				<artifactId>lombok</artifactId>
 				<version>${lombok.version}</version>
+			</dependency>
+
+			<!--JJWT-->
+			<dependency>
+				<groupId>io.jsonwebtoken</groupId>
+				<artifactId>jjwt-api</artifactId>
+				<version>${jjwt.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>io.jsonwebtoken</groupId>
+				<artifactId>jjwt-impl</artifactId>
+				<version>${jjwt.version}</version>
+				<scope>runtime</scope>
+			</dependency>
+			<dependency>
+				<groupId>io.jsonwebtoken</groupId>
+				<artifactId>jjwt-jackson</artifactId>
+				<version>${jjwt.version}</version>
+				<scope>runtime</scope>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
