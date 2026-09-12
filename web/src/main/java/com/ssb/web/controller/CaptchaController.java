@@ -25,6 +25,7 @@ public class CaptchaController {
      */
     @PostMapping("/captcha/get")
     public ResponseModel get(@RequestBody CaptchaVO captchaVO) {
+        System.out.println(captchaService.get(captchaVO));
         return captchaService.get(captchaVO);
     }
 

@@ -2,6 +2,7 @@ package com.ssb.web.controller;
 
 import com.ssb.entity.dto.UserQuery;
 import com.ssb.entity.po.User;
+import com.ssb.entity.vo.PaginationVO;
 import com.ssb.entity.vo.ResponseVO;
 import com.ssb.entity.vo.UserVO;
 import com.ssb.service.UserService;
@@ -41,8 +42,7 @@ public class TestController extends ABaseController{
     }
 
     @GetMapping
-    // TODO 这里少个分页类
-    public ResponseVO<Map<String, Object>> getUsers(
+    public ResponseVO<PaginationVO<UserVO>> getUsers(
            UserQuery userQuery
     ){
         return ResponseSuccess(userService.pageUser(userQuery));

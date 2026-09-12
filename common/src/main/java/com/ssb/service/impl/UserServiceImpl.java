@@ -3,14 +3,15 @@ package com.ssb.service.impl;
 import com.ssb.entity.dto.SimplePage;
 import com.ssb.entity.dto.UserQuery;
 import com.ssb.entity.po.User;
+import com.ssb.entity.vo.PaginationVO;
+import com.ssb.entity.vo.UserVO;
 import com.ssb.mappers.UserMapper;
 import com.ssb.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+import java.util.stream.Collectors;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -37,7 +38,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public Map<String, Object> pageUser(UserQuery query) {
+    public PaginationVO<UserVO> pageUser(UserQuery query) {
         if (null == query){
             query = new UserQuery();
         }
@@ -46,13 +47,23 @@ public class UserServiceImpl implements UserService {
         Integer total = userMapper.selectCount(query);
         SimplePage simplePage = new SimplePage(pageNum,total,pageSize);
         query.setSimplePage(simplePage);
+
         List<User> users = userMapper.selectList(query);
-        Map<String, Object> result = new HashMap<>();
-        result.put("users", users);
-        result.put("total", total);
-        result.put("pageSize", pageSize);
-        result.put("pageNum", pageNum);
-        result.put("pageTotal", simplePage.getPageTotal());
-        return result;
+
+        List<UserVO> userVOS = users.stream().map(
+                user -> {
+                    return UserVO.builder()
+                            .id(user.getId())
+                            .userName(user.getUserName())
+                            .build();
+                }
+        ).collect(Collectors.toList());
+        return PaginationVO.<UserVO>builder()
+                .pageNum(pageNum)
+                .pageSize(pageSize)
+                .pageTotal(simplePage.getPageTotal())
+                .total(total)
+                .list(userVOS)
+                .build();
     }
 }
