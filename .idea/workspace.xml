@@ -4,14 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="29003bd6-8cf9-44fa-af00-dc91dc9bcf2c" name="更改" comment="配置了分页类">
+    <list default="true" id="29003bd6-8cf9-44fa-af00-dc91dc9bcf2c" name="更改" comment="简单实现了自定义业务异常类，差个全局异常捕获类">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/ssb/constants/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/ssb/constants/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/ssb/entity/enums/ResponseEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/ssb/entity/enums/ResponseEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/ssb/entity/vo/ResponseVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/ssb/entity/vo/ResponseVO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/src/main/java/com/ssb/exception/BusinessException.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/ssb/exception/BusinessException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/ssb/mappers/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/ssb/mappers/UserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/ssb/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/ssb/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/ssb/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/ssb/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/resources/com/ssb/mappers/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/resources/com/ssb/mappers/UserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/ssb/web/controller/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/ssb/web/controller/TestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/ssb/web/controller/ABaseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/ssb/web/controller/ABaseController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,9 +44,9 @@
     &quot;accountId&quot;: &quot;c640220e-bf28-4e35-aad0-5810f34efdd3&quot;
   }
 }</component>
-  <component name="HttpClientOnboardingState"><![CDATA[{
-  "isOnboardingCommentShown": true
-}]]></component>
+  <component name="HttpClientOnboardingState">{
+  &quot;isOnboardingCommentShown&quot;: true
+}</component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -63,37 +64,37 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "HTTP 请求.generated-requests | #3.executor": "Run",
-    "Maven.admin [clean].executor": "Run",
-    "Maven.admin [install].executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Spring Boot.AdminApplication.executor": "Run",
-    "Spring Boot.SsbApplication.executor": "Run",
-    "Spring Boot.WebApplication.executor": "Run",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "G:/java_learn_resource/ssb/ssb-back/common/src/main/resources/fonts",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "模块",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.25322282",
-    "run.configurations.included.in.services": "true",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true",
-    "应用程序.JwtUtil.executor": "Run",
-    "应用程序.SsbApplication.executor": "Run"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;HTTP 请求.generated-requests | #3.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.admin [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.admin [install].executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Spring Boot.AdminApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.SsbApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.WebApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;G:/java_learn_resource/ssb/ssb-back/common/src/main/resources/fonts&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;模块&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.25322282&quot;,
+    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;,
+    &quot;应用程序.JwtUtil.executor&quot;: &quot;Run&quot;,
+    &quot;应用程序.SsbApplication.executor&quot;: &quot;Run&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="G:\java_learn_resource\ssb\ssb-back\common\src\main\resources\fonts" />
@@ -209,7 +210,9 @@
       <workItem from="1789141801484" duration="8000" />
       <workItem from="1789141817950" duration="143000" />
       <workItem from="1789204403596" duration="598000" />
-      <workItem from="1789212318769" duration="19587000" />
+      <workItem from="1789212318769" duration="19996000" />
+      <workItem from="1789379285456" duration="603000" />
+      <workItem from="1789459029303" duration="4750000" />
     </task>
     <task id="LOCAL-00001" summary="啥也没干">
       <option name="closed" value="true" />
@@ -275,7 +278,15 @@
       <option name="project" value="LOCAL" />
       <updated>1789233680414</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="简单实现了自定义业务异常类，差个全局异常捕获类">
+      <option name="closed" value="true" />
+      <created>1789235544642</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1789235544642</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -301,6 +312,7 @@
     <MESSAGE value="配置了JWT令牌需要的常量，以及JWT令牌需要的一些方法(不够后面再补)" />
     <MESSAGE value="测试滑块验证码，解决下编译时会出现的警告问题" />
     <MESSAGE value="配置了分页类" />
-    <option name="LAST_COMMIT_MESSAGE" value="配置了分页类" />
+    <MESSAGE value="简单实现了自定义业务异常类，差个全局异常捕获类" />
+    <option name="LAST_COMMIT_MESSAGE" value="简单实现了自定义业务异常类，差个全局异常捕获类" />
   </component>
 </project>

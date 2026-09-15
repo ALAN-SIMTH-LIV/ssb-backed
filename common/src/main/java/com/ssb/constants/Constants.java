@@ -7,4 +7,9 @@ public class Constants {
     public static final long JWT_EXPIRATION_TIME = 3600000; // 1小时
     //JWT颁发者
     public static final String JWT_ISSUER = "ssb";
+    //响应状态成功
+    public static final String RESPONSE_SUCCESS = "success";
+    //响应状态失败
+    public static final String RESPONSE_ERROR = "error";
+
 }

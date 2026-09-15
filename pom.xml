@@ -96,6 +96,13 @@
 				<artifactId>captcha-spring-boot-starter</artifactId>
 				<version>${anji.plus.version}</version>
 			</dependency>
+
+			<!--校验-->
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-validation</artifactId>
+				<version>${spring-boot.version}</version>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
 

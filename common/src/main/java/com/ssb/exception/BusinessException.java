@@ -38,10 +38,10 @@ public class BusinessException extends RuntimeException {
     }
 
     public BusinessException(ResponseEnum codeEnum) {
-        super(codeEnum.getText());
+        super(codeEnum.getMsg());
         this.responseEnum = codeEnum;
         this.code = codeEnum.getCode();
-        this.msg = codeEnum.getText();
+        this.msg = codeEnum.getMsg();
     }
 
     @Override

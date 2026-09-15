@@ -17,4 +17,5 @@ public class ResponseVO<T> {
     private Integer code;
     private String msg;
     private T data;
+    private String status;
 }
