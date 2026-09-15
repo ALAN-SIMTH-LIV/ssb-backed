@@ -23,13 +23,14 @@
 
 	<!--指定版本号-->
 	<properties>
+		<anji.plus.version>1.4.0</anji.plus.version>
+		<commons.pool2>2.12.1</commons.pool2>
 		<java.version>17</java.version>
-		<spring-boot.version>3.5.11</spring-boot.version>
+		<jjwt.version>0.12.7</jjwt.version>
+		<lombok.version>1.18.38</lombok.version>
 		<mysql.version>8.0.30</mysql.version>
 		<mybatis.version>3.0.5</mybatis.version>
-		<lombok.version>1.18.38</lombok.version>
-		<jjwt.version>0.12.7</jjwt.version>
-		<anji.plus.version>1.4.0</anji.plus.version>
+		<spring-boot.version>3.5.11</spring-boot.version>
 	</properties>
 
 	<!--依赖管理-->
@@ -40,7 +41,6 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-starter-test</artifactId>
 				<version>${spring-boot.version}</version>
-				<scope>test</scope>
 			</dependency>
 
 			<!--MVC-->
@@ -81,13 +81,11 @@
 				<groupId>io.jsonwebtoken</groupId>
 				<artifactId>jjwt-impl</artifactId>
 				<version>${jjwt.version}</version>
-				<scope>runtime</scope>
 			</dependency>
 			<dependency>
 				<groupId>io.jsonwebtoken</groupId>
 				<artifactId>jjwt-jackson</artifactId>
 				<version>${jjwt.version}</version>
-				<scope>runtime</scope>
 			</dependency>
 
 			<!--滑块验证码 anji-plus-->
@@ -101,6 +99,27 @@
 			<dependency>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-starter-validation</artifactId>
+				<version>${spring-boot.version}</version>
+			</dependency>
+
+			<!--Redis-->
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-data-redis</artifactId>
+				<version>${spring-boot.version}</version>
+			</dependency>
+
+			<!--Redis连接池-->
+			<dependency>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>commons-pool2</artifactId>
+				<version>${commons.pool2}</version>
+			</dependency>
+
+			<!--邮箱管理-->
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-mail</artifactId>
 				<version>${spring-boot.version}</version>
 			</dependency>
 		</dependencies>

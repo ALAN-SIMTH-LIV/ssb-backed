@@ -11,5 +11,9 @@ public class Constants {
     public static final String RESPONSE_SUCCESS = "success";
     //响应状态失败
     public static final String RESPONSE_ERROR = "error";
-
+    // Redis用
+    // 项目名称
+    public static final String REDIS_SSB = "ssb:";
+    // 登录
+    public static final String REDIS_LOGIN = REDIS_SSB + "login:";
 }
