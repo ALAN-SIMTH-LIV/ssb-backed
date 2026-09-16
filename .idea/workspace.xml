@@ -4,17 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="29003bd6-8cf9-44fa-af00-dc91dc9bcf2c" name="更改" comment="简单优化了自定义业务异常类和全局异常捕获类，下一步是引入Redis">
+    <list default="true" id="29003bd6-8cf9-44fa-af00-dc91dc9bcf2c" name="更改" comment="实现邮箱注册码，优化了滑动验证码代码，下一步登录和注册，还有权限控制，简单实现了Redis相关配置，解决了一些父子组件依赖问题，配置了一下异步类">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/ssb/constants/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/ssb/constants/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/ssb/web/WebApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/ssb/web/WebApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/ssb/component/EmailComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/ssb/component/EmailComponent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/ssb/component/RedisComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/ssb/component/RedisComponent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/ssb/config/AppConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/ssb/config/AppConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/ssb/config/AsyncConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/ssb/config/AsyncConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/ssb/config/RedisConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/ssb/config/RedisConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/ssb/entity/dto/CaptchaDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/ssb/entity/vo/SlideCaptchaVO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/ssb/entity/dto/UserQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/ssb/entity/dto/UserQuery.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/ssb/entity/po/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/ssb/entity/po/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/ssb/entity/vo/UserVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/ssb/entity/vo/UserVO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/ssb/mappers/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/ssb/mappers/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/ssb/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/ssb/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/ssb/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/ssb/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/ssb/utils/JwtUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/ssb/utils/JwtUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/ssb/utils/RandomUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/ssb/utils/RandomUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/ssb/utils/RedisUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/ssb/utils/RedisUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/resources/com/ssb/mappers/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/resources/com/ssb/mappers/UserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/ssb/web/config/CorsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/ssb/config/CorsConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/main/java/com/ssb/web/controller/CaptchaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/ssb/web/controller/CaptchaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/ssb/web/controller/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/ssb/web/controller/TestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/ssb/web/controller/TestController.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/test/java/com/ssb/web/WebApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/test/java/com/ssb/web/WebApplicationTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,6 +108,7 @@
     "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true",
     "应用程序.JwtUtil.executor": "Run",
+    "应用程序.RandomUtil.executor": "Run",
     "应用程序.SsbApplication.executor": "Run"
   }
 }]]></component>
@@ -118,6 +130,17 @@
         <option value="SpringBootApplicationConfigurationType" />
       </set>
     </option>
+    <option name="hiddenConfigurations">
+      <map>
+        <entry key="HttpClient.HttpRequestRunConfigurationType">
+          <value>
+            <set>
+              <option value="generated-requests | #3" />
+            </set>
+          </value>
+        </entry>
+      </map>
+    </option>
     <option name="configurationStatuses">
       <map>
         <entry key="SpringBootApplicationConfigurationType">
@@ -138,6 +161,19 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.ssb.component.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RandomUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.ssb.utils.RandomUtil" />
+      <module name="common" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ssb.utils.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -186,6 +222,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="应用程序.RandomUtil" />
         <item itemvalue="JUnit.WebApplicationTests.contextLoads" />
         <item itemvalue="HTTP 请求.generated-requests | #3" />
         <item itemvalue="应用程序.JwtUtil" />
@@ -234,7 +271,9 @@
       <workItem from="1789204403596" duration="598000" />
       <workItem from="1789212318769" duration="19996000" />
       <workItem from="1789379285456" duration="603000" />
-      <workItem from="1789459029303" duration="24422000" />
+      <workItem from="1789459029303" duration="24790000" />
+      <workItem from="1789546965268" duration="5908000" />
+      <workItem from="1789557150631" duration="8672000" />
     </task>
     <task id="LOCAL-00001" summary="啥也没干">
       <option name="closed" value="true" />
@@ -316,7 +355,15 @@
       <option name="project" value="LOCAL" />
       <updated>1789464821721</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="实现邮箱注册码，优化了滑动验证码代码，下一步登录和注册，还有权限控制，简单实现了Redis相关配置，解决了一些父子组件依赖问题，配置了一下异步类">
+      <option name="closed" value="true" />
+      <created>1789493743824</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1789493743824</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -344,6 +391,7 @@
     <MESSAGE value="配置了分页类" />
     <MESSAGE value="简单实现了自定义业务异常类，差个全局异常捕获类" />
     <MESSAGE value="简单优化了自定义业务异常类和全局异常捕获类，下一步是引入Redis" />
-    <option name="LAST_COMMIT_MESSAGE" value="简单优化了自定义业务异常类和全局异常捕获类，下一步是引入Redis" />
+    <MESSAGE value="实现邮箱注册码，优化了滑动验证码代码，下一步登录和注册，还有权限控制，简单实现了Redis相关配置，解决了一些父子组件依赖问题，配置了一下异步类" />
+    <option name="LAST_COMMIT_MESSAGE" value="实现邮箱注册码，优化了滑动验证码代码，下一步登录和注册，还有权限控制，简单实现了Redis相关配置，解决了一些父子组件依赖问题，配置了一下异步类" />
   </component>
 </project>

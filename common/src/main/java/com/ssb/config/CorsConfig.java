@@ -1,4 +1,4 @@
-package com.ssb.web.config;
+package com.ssb.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;

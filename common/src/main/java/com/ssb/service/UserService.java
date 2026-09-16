@@ -8,7 +8,7 @@ import com.ssb.entity.vo.UserVO;
 import java.util.Map;
 
 public interface UserService {
-    Boolean register(User user);
+    User register(User user);
 
     User findById(Integer id);
 

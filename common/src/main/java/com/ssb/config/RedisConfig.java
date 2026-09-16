@@ -7,6 +7,9 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.listener.RedisMessageListenerContainer;
 import org.springframework.data.redis.serializer.RedisSerializer;
 
+/**
+ * Redis
+ */
 @Configuration
 public class RedisConfig {
     @Bean("redisTemplate")

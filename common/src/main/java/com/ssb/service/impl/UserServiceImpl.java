@@ -5,8 +5,10 @@ import com.ssb.entity.dto.UserQuery;
 import com.ssb.entity.po.User;
 import com.ssb.entity.vo.PaginationVO;
 import com.ssb.entity.vo.UserVO;
+import com.ssb.exception.BusinessException;
 import com.ssb.mappers.UserMapper;
 import com.ssb.service.UserService;
+import com.ssb.utils.RandomUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,14 +22,24 @@ public class UserServiceImpl implements UserService {
     private UserMapper<User,UserQuery> userMapper;
 
     @Override
-    public Boolean register(User user) {
-        User user1 = userMapper.selectByUserName(user);
-        if (null == user1){
-            userMapper.insert(user);
-            return true;
+    public User register(User user) {
+        // 查找用户是否存在
+        User existUser = userMapper.selectByEmail(user);
+        if (null != existUser){
+            // 存在
+            throw new BusinessException("邮箱已存在");
         }
-        return false;
+
+        // 生成昵称
+        String nickName = RandomUtil.generateNickName(18);
+        user.setNickName(nickName);
+        user.setPassword("123456");
+
+        // 不存在
+        userMapper.insert(user);
+        return userMapper.selectByEmail(user);
     }
+
 
     @Override
     public User findById(Integer id) {
@@ -51,7 +63,8 @@ public class UserServiceImpl implements UserService {
                 user -> {
                     return UserVO.builder()
                             .id(user.getId())
-                            .userName(user.getUserName())
+                            .email(user.getEmail())
+                            .nickName(user.getNickName())
                             .build();
                 }
         ).collect(Collectors.toList());

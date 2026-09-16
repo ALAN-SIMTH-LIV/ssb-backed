@@ -57,16 +57,16 @@ public class JwtUtil {
      * @param claims 自定义载荷数据（key为声明名称，value为对应的值）
      * @return JWT令牌
      */
-    public static String generateJWT(Map<String, Object> claims){
+    public static <E> String generateJWT(Map<String, E> claims){
         Key key = Base64StringToJwtKey(Constants.BASE64_STRING_KEY_JWT);
         Date issuedDate = new Date(System.currentTimeMillis());
-        Date ExpirationDate = new Date(System.currentTimeMillis() + Constants.JWT_EXPIRATION_TIME);
+        Date expirationDate = new Date(System.currentTimeMillis() + Constants.JWT_EXPIRATION_TIME);
         String id = UUID.randomUUID().toString().replace("-","");
         return Jwts.builder()
                 .signWith(key)
                 .issuedAt(issuedDate)
                 .claims(claims)
-                .expiration(ExpirationDate)
+                .expiration(expirationDate)
                 .issuer(Constants.JWT_ISSUER)
                 .id(id)
                 .compact();

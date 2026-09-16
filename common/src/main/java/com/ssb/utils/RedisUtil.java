@@ -39,9 +39,9 @@ public class RedisUtil<V> {
     /**
      * 获取值
      * @param key 键
-     * @return Object
+     * @return V
      */
-    public Object get(String key){
+    public V get(String key){
         return redisTemplate.opsForValue().get(key);
     }
 
@@ -60,16 +60,16 @@ public class RedisUtil<V> {
      * @param key 键
      * @return boolean
      */
-    public Boolean delete(String key){
+    public boolean delete(String key){
         return redisTemplate.delete(key);
     }
 
     /**
      * 判断键是否存在
      * @param key 键
-     * @return boolean
+     * @return 存在 true 不存在 false
      */
-    public Boolean hasKay(String key){
+    public boolean hasKay(String key){
         return redisTemplate.hasKey(key);
     }
 }

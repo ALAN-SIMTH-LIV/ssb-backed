@@ -1,6 +1,10 @@
 package com.ssb.utils;
 
+import java.time.Instant;
+import java.time.LocalDateTime;
 import java.util.Random;
+import java.util.UUID;
+import java.util.concurrent.TimeUnit;
 
 /**
  * 随机生成类
@@ -21,4 +25,18 @@ public class RandomUtil {
         }
         return sb.toString();
     }
+
+    /**
+     * 生成用户昵称
+     * @param length 长度
+     * @return u_ea3e7b1cc2584ced
+     */
+    public static String generateNickName(int length) {
+        String uuid = UUID.randomUUID().toString().replace("-", "");
+        if (length > 0 && length < uuid.length()) {
+            return "u_" + uuid.substring(0, length - 2);
+        }
+        return "u_" + uuid.substring(0, 10);
+    }
+
 }

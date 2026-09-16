@@ -1,4 +1,4 @@
-package com.ssb.entity.dto;
+package com.ssb.entity.vo;
 
 
 import com.anji.captcha.model.vo.CaptchaVO;
@@ -12,7 +12,7 @@ import java.io.Serializable;
  */
 @Getter
 @Setter
-public class CaptchaDTO extends CaptchaVO implements Serializable {
+public class SlideCaptchaVO extends CaptchaVO implements Serializable {
     // 邮箱
     private String email;
 }

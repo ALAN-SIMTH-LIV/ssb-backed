@@ -6,13 +6,14 @@
     <!--实体映射-->
     <resultMap id="base_map" type="com.ssb.entity.po.User">
         <id column="id" property="id"/>
-        <result column="username" property="userName"/>
+        <result column="email" property="email"/>
         <result column="password" property="password"/>
+        <result column="nick_name" property="nickName"/>
     </resultMap>
 
     <!--查询用的结果列-->
     <sql id="base_column_list">
-        u.id,u.username,u.password
+        u.id,u.email,u.password,u.nick_name
     </sql>
 
     <!--基础条件字段-->
@@ -20,8 +21,11 @@
         <if test="query.id != null">
             and u.id = #{query.id}
         </if>
-        <if test="query.userName != null and query.userName !=''">
-            and u.username = #{query.userName}
+        <if test="query.email != null and query.email !=''">
+            and u.email = #{query.email}
+        </if>
+        <if test="query.nickName != null and query.nickName !=''">
+            and u.nick_name = #{query.nickName}
         </if>
     </sql>
 
@@ -36,22 +40,25 @@
     <sql id="query_condition">
         <where>
             <include refid="base_condition_filed"/>
-            <if test="query.userNameFuzzy != null and query.userNameFuzzy !=''">
-                AND u.username LIKE concat('%', #{query.userNameFuzzy}, '%')
+            <if test="query.emailFuzzy != null and query.emailFuzzy !=''">
+                AND u.email LIKE concat('%', #{query.emailFuzzy}, '%')
+            </if>
+            <if test="query.nickNameFuzzy != null and query.nickNameFuzzy !=''">
+                AND u.nick_name LIKE concat('%', #{query.nickNameFuzzy}, '%')
             </if>
         </where>
     </sql>
 
     <!--新增-->
     <insert id="insert" parameterType="com.ssb.entity.po.User" >
-        INSERT INTO user(username,password) VALUES (#{userName},#{password})
+        INSERT INTO user(email,password,nick_name) VALUES (#{email},#{password},#{nickName})
     </insert>
 
-    <!--根据UserName查询-->
-    <select id="selectByUserName" resultMap="base_map">
+    <!--根据Email查询-->
+    <select id="selectByEmail" resultMap="base_map">
         SELECT
         <include refid="base_column_list"/>
-        FROM user u WHERE u.username=#{userName}
+        FROM user u WHERE u.email=#{email}
     </select>
 
     <!--根据ID查询-->
