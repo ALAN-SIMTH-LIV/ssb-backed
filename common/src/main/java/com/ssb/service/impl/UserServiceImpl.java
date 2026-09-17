@@ -10,7 +10,9 @@ import com.ssb.mappers.UserMapper;
 import com.ssb.service.UserService;
 import com.ssb.utils.RandomUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -20,22 +22,25 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserMapper<User,UserQuery> userMapper;
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
     @Override
+    @Transactional
     public User register(User user) {
         // 查找用户是否存在
         User existUser = userMapper.selectByEmail(user);
         if (null != existUser){
-            // 存在
+            // 用户存在
             throw new BusinessException("邮箱已存在");
         }
 
-        // 生成昵称
+        // 生成默认昵称
         String nickName = RandomUtil.generateNickName(18);
         user.setNickName(nickName);
-        user.setPassword("123456");
-
-        // 不存在
+        // 默认密码统一先设置成123456
+        user.setPassword(passwordEncoder.encode("123456"));
+        // 用户不存在
         userMapper.insert(user);
         return userMapper.selectByEmail(user);
     }

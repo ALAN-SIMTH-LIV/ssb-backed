@@ -47,10 +47,12 @@ public class AuthController extends ABaseController{
             throw new BusinessException("验证码错误");
         }
 
+        // 令牌需要的一些信息
         Map<String,Object> userInfoMap = new HashMap<>();
-        userInfoMap.put("userId",result.getId());
-        String token = JwtUtil.generateJWT(userInfoMap);
-
+        userInfoMap.put("authorities",result.getId());
+        // 创建令牌
+        String token = JwtUtil.generateJWT(result.getId().toString(),userInfoMap);
+        // 清楚Redis中存储的邮箱验证码
         redisComponent.cleanEmailCode(Constants.REDIS_LOGIN+userVO.getEmail());
 
         return ResponseSuccess(token);

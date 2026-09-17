@@ -4,14 +4,18 @@ import com.ssb.constants.Constants;
 import com.ssb.entity.vo.UserVO;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.io.Encoders;
 import io.jsonwebtoken.security.Keys;
+import org.springframework.stereotype.Component;
+
 import javax.crypto.SecretKey;
 import java.security.Key;
 import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.function.Function;
+import java.util.stream.Collectors;
 
 public class JwtUtil {
     /**
@@ -34,19 +38,42 @@ public class JwtUtil {
 
     /**
      * 生成JWT令牌
+     * @param subject 存点唯一值
+     * @param claims 存点内容
+     * @return JWT令牌
+     * @param <E> 存储内容的值
+     */
+    public static <E> String generateJWT(String subject,Map<String, E> claims){
+        Key key = Base64StringToJwtKey(Constants.BASE64_STRING_KEY_JWT);
+        Date issuedDate = new Date(System.currentTimeMillis());
+        Date expirationDate = new Date(System.currentTimeMillis() + Constants.JWT_EXPIRATION_TIME);
+        String id = UUID.randomUUID().toString().replace("-","");
+        return Jwts.builder()
+                .signWith(key)
+                .issuedAt(issuedDate)
+                .subject(subject)
+                .claims(claims)
+                .expiration(expirationDate)
+                .issuer(Constants.JWT_ISSUER)
+                .id(id)
+                .compact();
+    }
+
+    /**
+     * 生成JWT令牌
      * @param subject 主题
      * @return JWT令牌
      */
     public static String generateJWT(String subject){
         Key key = Base64StringToJwtKey(Constants.BASE64_STRING_KEY_JWT);
         Date issuedDate = new Date(System.currentTimeMillis());
-        Date ExpirationDate = new Date(System.currentTimeMillis() + Constants.JWT_EXPIRATION_TIME);
+        Date expirationDate = new Date(System.currentTimeMillis() + Constants.JWT_EXPIRATION_TIME);
         String id = UUID.randomUUID().toString().replace("-","");
         return Jwts.builder()
                 .signWith(key)
                 .subject(subject)
                 .issuedAt(issuedDate)
-                .expiration(ExpirationDate)
+                .expiration(expirationDate)
                 .issuer(Constants.JWT_ISSUER)
                 .id(id)
                 .compact();
@@ -123,6 +150,21 @@ public class JwtUtil {
      */
     public static boolean isExpired(String token){
         return getExpiration(token).before(new Date());
+    }
+
+    /**
+     * 获取Token中存储的所有权限信息
+     * @param claims 载荷内容
+     * @return List 权限
+     */
+    public static List<String> getAuthorities(Claims claims) {
+        Object auth = claims.get("authorities");
+        if (auth instanceof List) {
+            return ((List<?>) auth).stream()
+                    .map(Object::toString)
+                    .collect(Collectors.toList());
+        }
+        return Collections.emptyList();
     }
 
     public static void main(String[] args) {

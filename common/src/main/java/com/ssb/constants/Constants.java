@@ -16,4 +16,8 @@ public class Constants {
     public static final String REDIS_SSB = "ssb:";
     // 登录
     public static final String REDIS_LOGIN = REDIS_SSB + "login:";
+    // Http报头中令牌自定义标识
+    public static final String HTTP_HEADER_AUTHORIZATION = "Authorization";
+    // Http报头中令牌自定义标识中的开头
+    public static final String HTTP_HEADER_PREFIX = "Bearer ";
 }

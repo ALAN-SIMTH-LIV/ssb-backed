@@ -122,6 +122,13 @@
 				<artifactId>spring-boot-starter-mail</artifactId>
 				<version>${spring-boot.version}</version>
 			</dependency>
+
+			<!--Security-->
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-security</artifactId>
+				<version>${spring-boot.version}</version>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
 

@@ -63,7 +63,7 @@ public class CaptchaController extends ABaseController{
     /**
      * 发送验证码接口，需要二次验证
      */
-    @RequestMapping(value = "/sendEmail", method = RequestMethod.POST)
+    @PostMapping("/sendEmail")
     public ResponseVO<Void> sendRegisterCode(
             @RequestBody SlideCaptchaVO slideCaptchaVO
     ) {
@@ -79,8 +79,8 @@ public class CaptchaController extends ABaseController{
             throw new BusinessException("滑块验证码未通过");
         }
 
-        // 4位验证码
-        String code = RandomUtil.generateCode(4);
+        // 6位验证码
+        String code = RandomUtil.generateCode(6);
 
         // 查看Email是否存在Redis
         String key = Constants.REDIS_LOGIN + slideCaptchaVO.getEmail();
@@ -88,11 +88,15 @@ public class CaptchaController extends ABaseController{
            throw new BusinessException("请求过于频繁，请1分钟后再试");
        }
 
-       // 发送邮件 异步
-        emailComponent.sendEmail(slideCaptchaVO.getEmail(),code);
+       try {
+           // 发送邮件 异步
+           emailComponent.sendEmail(slideCaptchaVO.getEmail(),code);
 
-       // 保存Redis
-        redisComponent.saveEmailCode(key ,code, 2, TimeUnit.MINUTES);
+           // 保存Redis
+           redisComponent.saveEmailCode(key ,code, 2, TimeUnit.MINUTES);
+       } catch (Exception e){
+           throw new BusinessException("邮件发送失败，请稍后重试");
+       }
 
         return ResponseSuccess();
     }

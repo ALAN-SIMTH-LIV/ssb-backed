@@ -8,7 +8,7 @@ import lombok.Setter;
 import java.io.Serializable;
 
 /**
- * 继承CaptchaVO,添加项目需要字段
+ * 继承CaptchaVO,调用第三方组件
  */
 @Getter
 @Setter
