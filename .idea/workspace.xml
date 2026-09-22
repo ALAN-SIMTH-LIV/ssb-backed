@@ -4,17 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="29003bd6-8cf9-44fa-af00-dc91dc9bcf2c" name="更改" comment="优化了用户字段及相关业务、数据库逻辑，实现登录注册功能">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ccef0d34-ad01-4afb-ac65-6e07332f14f2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/ccef0d34-ad01-4afb-ac65-6e07332f14f2.xml" afterDir="false" />
+    <list default="true" id="29003bd6-8cf9-44fa-af00-dc91dc9bcf2c" name="更改" comment="暂时实现Security，引入需要的表，但是没有实现和测试，修改了一些注释。">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/ssb/constants/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/ssb/constants/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/ssb/entity/vo/SlideCaptchaVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/ssb/entity/vo/SlideCaptchaVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/ssb/mappers/AuthorityMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/ssb/mappers/AuthorityMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/ssb/component/EmailComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/ssb/component/EmailComponent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/ssb/config/AsyncConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/ssb/config/AsyncConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/ssb/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/ssb/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/src/main/java/com/ssb/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/ssb/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/ssb/utils/JwtUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/ssb/utils/JwtUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/ssb/web/WebApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/ssb/web/WebApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/main/java/com/ssb/web/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/ssb/web/controller/AuthController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/main/java/com/ssb/web/controller/CaptchaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/ssb/web/controller/CaptchaController.java" afterDir="false" />
     </list>
@@ -267,7 +262,9 @@
       <workItem from="1789557150631" duration="8941000" />
       <workItem from="1789611904889" duration="22483000" />
       <workItem from="1789645565277" duration="149000" />
-      <workItem from="1789653557879" duration="2120000" />
+      <workItem from="1789653557879" duration="2328000" />
+      <workItem from="1790056086681" duration="3085000" />
+      <workItem from="1790077263696" duration="6843000" />
     </task>
     <task id="LOCAL-00001" summary="啥也没干">
       <option name="closed" value="true" />
@@ -365,7 +362,15 @@
       <option name="project" value="LOCAL" />
       <updated>1789571157093</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="暂时实现Security，引入需要的表，但是没有实现和测试，修改了一些注释。">
+      <option name="closed" value="true" />
+      <created>1789655893578</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1789655893578</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -395,6 +400,7 @@
     <MESSAGE value="简单优化了自定义业务异常类和全局异常捕获类，下一步是引入Redis" />
     <MESSAGE value="实现邮箱注册码，优化了滑动验证码代码，下一步登录和注册，还有权限控制，简单实现了Redis相关配置，解决了一些父子组件依赖问题，配置了一下异步类" />
     <MESSAGE value="优化了用户字段及相关业务、数据库逻辑，实现登录注册功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="优化了用户字段及相关业务、数据库逻辑，实现登录注册功能" />
+    <MESSAGE value="暂时实现Security，引入需要的表，但是没有实现和测试，修改了一些注释。" />
+    <option name="LAST_COMMIT_MESSAGE" value="暂时实现Security，引入需要的表，但是没有实现和测试，修改了一些注释。" />
   </component>
 </project>

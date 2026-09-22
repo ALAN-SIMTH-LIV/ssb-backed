@@ -28,7 +28,7 @@ public class EmailComponent {
     @Async("emailTaskExecutor")
     public void sendEmail(String toEmail,String code){
         try {
-            System.out.println("email线程: " + Thread.currentThread().getName());
+//            System.out.println("email线程: " + Thread.currentThread().getName());
 
             SimpleMailMessage mailMessage = new SimpleMailMessage();
             // 发送者

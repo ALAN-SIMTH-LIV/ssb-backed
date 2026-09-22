@@ -10,6 +10,7 @@ import com.ssb.mappers.UserMapper;
 import com.ssb.service.UserService;
 import com.ssb.utils.RandomUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DuplicateKeyException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -26,23 +27,27 @@ public class UserServiceImpl implements UserService {
     private PasswordEncoder passwordEncoder;
 
     @Override
-    @Transactional
-    public User register(User user) {
-        // 查找用户是否存在
+    @Transactional(rollbackFor = Exception.class)
+    public User loginOrRegister(User user) {
+        // 查看用户是否存在
         User existUser = userMapper.selectByEmail(user);
-        if (null != existUser){
-            // 用户存在
-            throw new BusinessException("邮箱已存在");
+        // 用户存在
+        if (existUser != null){
+            return existUser;
         }
-
-        // 生成默认昵称
-        String nickName = RandomUtil.generateNickName(18);
-        user.setNickName(nickName);
-        // 默认密码统一先设置成123456
-        user.setPassword(passwordEncoder.encode("123456"));
-        // 用户不存在
-        userMapper.insert(user);
-        return userMapper.selectByEmail(user);
+        // 用户不存在,注册新用户
+        User newUser = User.builder()
+                .email(user.getEmail())
+                .password(passwordEncoder.encode("123456"))
+                .nickName(RandomUtil.generateNickName(18))
+                .build();
+        // 唯一键冲突
+        try{
+            userMapper.insert(newUser);
+        } catch (DuplicateKeyException e){
+            return userMapper.selectByEmail(user);
+        }
+        return newUser;
     }
 
 

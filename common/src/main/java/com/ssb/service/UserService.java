@@ -5,10 +5,8 @@ import com.ssb.entity.po.User;
 import com.ssb.entity.vo.PaginationVO;
 import com.ssb.entity.vo.UserVO;
 
-import java.util.Map;
-
 public interface UserService {
-    User register(User user);
+    User loginOrRegister(User user);
 
     User findById(Integer id);
 

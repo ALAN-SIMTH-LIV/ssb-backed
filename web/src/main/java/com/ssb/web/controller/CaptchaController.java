@@ -71,7 +71,6 @@ public class CaptchaController extends ABaseController{
         CaptchaVO captchaVO = new CaptchaVO();
         // 获取验证码Token
         captchaVO.setCaptchaVerification(slideCaptchaVO.getCaptchaVerification());
-
         // 判断是否已经通过滑块验证
         ResponseModel response = captchaService.verification(captchaVO);
 //        System.out.println(response.isSuccess() ? "二次验证通过" : "二次验证未通过");

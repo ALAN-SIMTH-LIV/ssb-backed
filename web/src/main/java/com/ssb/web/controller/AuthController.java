@@ -8,7 +8,6 @@ import com.ssb.entity.vo.UserVO;
 import com.ssb.exception.BusinessException;
 import com.ssb.service.UserService;
 import com.ssb.utils.JwtUtil;
-import io.jsonwebtoken.Claims;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -28,7 +27,7 @@ public class AuthController extends ABaseController{
     @PostMapping("/login")
     public ResponseVO<String> login(@RequestBody UserVO userVO){
         // 用户注册
-        User result = userService.register(
+        User result = userService.loginOrRegister(
                 User.builder()
                 .email(userVO.getEmail())
                 .build()
@@ -49,7 +48,7 @@ public class AuthController extends ABaseController{
 
         // 令牌需要的一些信息
         Map<String,Object> userInfoMap = new HashMap<>();
-        userInfoMap.put("authorities",result.getId());
+        userInfoMap.put("authorities","111");
         // 创建令牌
         String token = JwtUtil.generateJWT(result.getId().toString(),userInfoMap);
         // 清楚Redis中存储的邮箱验证码
